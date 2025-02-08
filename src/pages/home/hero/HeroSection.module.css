@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://rayalparkhotel.netlify.app/assets/goo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+.simple{
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: #A3C1CB;
+}
+.text h1{
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    color: white;
+}
+.hotel{
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    color: #e82574; 
+}
+.textt{
+    display: flex;
+}
