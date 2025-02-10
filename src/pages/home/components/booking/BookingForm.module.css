@@ -1,0 +1,81 @@
+.bookingform {
+    display: flex;
+    flex-direction: row;  /* Düzülüşü üfüqi (yan-yana) edirik */
+    justify-content: space-between;  /* Aralarındaki boşluğu bərabər şəkildə paylaşır */
+    align-items: center;  /* Mərkəzləşdirir */
+    gap: 20px;  /* Divlər arasında boşluq */
+    position: absolute;
+    z-index: 1;
+    top: 640px;
+    left: 180px;
+    background-color: white;
+    height: 116px;
+    width: 1200px;
+
+  }
+  
+  .form {
+    display: flex;
+    align-items: center;  /* Vertikal mərkəzləşdirmək */
+    gap: 20px;  /* Hər bir form elementi arasında boşluq */
+  }
+  .formDiv{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .iconDiv {
+    font-size: 28px;
+    color: #e82574;
+  }
+  .formm{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    gap: 80px;
+  }
+  .date {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  /* Hər bir sahə tam genişlikdə olur */
+  }
+  
+  .bookingform label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .bookingform input, .bookingform select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+  }
+  
+  .bookingform input:focus, .bookingform select:focus {
+    border-color: #007bff;
+  }
+  
+  .bookingform button {
+    width: 143px;
+    height: 40px;
+    background-color: #E82574;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .bookingform button:hover {
+    background-color: #be1458;
+  }
+  
