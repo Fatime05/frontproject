@@ -1,14 +1,29 @@
 import { useState } from "react";
-import styles from "./Login.module.css"; // CSS Modules import
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import styles from "./Login.module.css";
 
-const  Login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    setError(null);
+
+    try {
+      const res = await axios.post("http://localhost:6066/api/auth/login", { 
+        username: email,  // Backend username istifadə etdiyi üçün email-i göndəririk
+        password 
+      }, { withCredentials: true });
+
+      console.log("Login Successful:", res.data);
+      navigate("/dashboard"); // İstifadəçi daxil olduqdan sonra yönləndirilir
+    } catch (err) {
+      setError(err.response?.data?.message || "Something went wrong!");
+    }
   };
 
   return (
@@ -16,10 +31,10 @@ const  Login = () => {
       <div className={styles.loginBox}>
         <h2 className={styles.title}>Sign In</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
-          <label>Email</label>
+          <label>Username</label>
           <input
-            type="email"
-            placeholder="Enter your email"
+            type="text"
+            placeholder="Enter your username"
             className={styles.input}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -32,10 +47,7 @@ const  Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className={styles.rememberMe}>
-            <input type="checkbox" id="remember" />
-            <label htmlFor="remember">Remember Me</label>
-          </div>
+          {error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.button}>Sign In</button>
           <div className={styles.links}>
             <Link to="/forgot-password">Forgot Password?</Link>
@@ -45,7 +57,6 @@ const  Login = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Login
-
+export default Login;

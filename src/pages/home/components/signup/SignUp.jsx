@@ -1,6 +1,7 @@
 import { useState } from "react";
-import styles from "./SignUp.module.css"; // CSS Modules import
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import styles from "./SignUp.module.css";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -10,17 +11,35 @@ export default function Signup() {
     confirmPassword: "",
   });
 
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
       return;
     }
-    console.log("User Data:", formData);
+
+    try {
+      await axios.post("http://localhost:6066/api/auth/register", {
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+      },
+      { withCredentials: true } );
+
+      alert("Registration successful! Please log in.");
+      navigate("/login"); // Qeydiyyat bitəndən sonra login səhifəsinə yönləndiririk
+    } catch (err) {
+      setError(err.response?.data?.message || "Something went wrong!");
+    }
   };
 
   return (
@@ -64,6 +83,7 @@ export default function Signup() {
             value={formData.confirmPassword}
             onChange={handleChange}
           />
+          {error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.button}>Sign Up</button>
           <div className={styles.links}>
             <span>Already have an account?</span>
