@@ -1,7 +1,8 @@
+import styles from './Login.module.css'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import styles from "./Login.module.css";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,15 +15,34 @@ const Login = () => {
     setError(null);
 
     try {
-      const res = await axios.post("http://localhost:6066/api/auth/login", { 
+      const res = await axios.post("http://localhost:6066/api/auth/login", {
         username: email,  // Backend username istifadə etdiyi üçün email-i göndəririk
-        password 
+        password
       }, { withCredentials: true });
 
-      console.log("Login Successful:", res.data);
-      navigate("/dashboard"); // İstifadəçi daxil olduqdan sonra yönləndirilir
+      // Serverdən gələn məlumatı konsola yazırıq
+      console.log("Server response:", res.data);  // Tam cavabı yaz
+
+      // Serverdən gələn user məlumatını birbaşa res.data istifadə edirik
+      const userData = res.data;   // res.data birbaşa istifadə olunur
+
+      // localStorage-ın mövcudluğunu yoxlayırıq
+      if (typeof(Storage) !== "undefined") {
+        // localStorage mövcuddursa, məlumatı saxlayırıq
+        if (userData) {
+          console.log("User data to store:", userData);
+          localStorage.setItem("user", JSON.stringify(userData));
+        } else {
+          console.log("No user data found!");
+        }
+      } else {
+        console.log("localStorage is not supported or is disabled in this environment");
+      }
+
+      console.log(res.data);
+      navigate("/dashboard"); // Daxil olduqdan sonra yönləndiririk
     } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong!");
+      setError(err.response?.data?.message || err.message || "Something went wrong!");
     }
   };
 

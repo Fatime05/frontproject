@@ -21,19 +21,24 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-
+  
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
-
+  
     try {
-      await axios.post("http://localhost:6066/api/auth/register", {
+      const res = await axios.post("http://localhost:6066/api/auth/register", {
         username: formData.username,
         email: formData.email,
         password: formData.password,
-      },
-      { withCredentials: true } );
+      }, { withCredentials: true });
+
+      // Serverdən alınan istifadəçi məlumatlarını localStorage-a yazırıq
+      const userData = res.data.user;
+      if (userData) {
+        localStorage.setItem("user", JSON.stringify(userData));
+      }
 
       alert("Registration successful! Please log in.");
       navigate("/login"); // Qeydiyyat bitəndən sonra login səhifəsinə yönləndiririk
@@ -41,6 +46,7 @@ export default function Signup() {
       setError(err.response?.data?.message || "Something went wrong!");
     }
   };
+  
 
   return (
     <div className={styles.signupContainer}>
