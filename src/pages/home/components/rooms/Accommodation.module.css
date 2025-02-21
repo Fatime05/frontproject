@@ -1,0 +1,161 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.context{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 60px;
+    margin-top: 40px;
+}
+.link{
+    text-decoration: none;
+}
+.title{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: black;
+}
+.firstroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+.text hr {
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px 0;
+    width: 50px;
+}
+.image img{
+    width: 532px;
+    height: 326px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.text p{
+    font-family: Karla, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+}
+.text h1{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 37px;
+    color: black;
+    transition: 0.3s;
+    text-align: center;
+}
+.text h1:hover{
+    color: #37c2d8;
+}
+.read {
+    font-family: Karla, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+.secondroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+.thirdroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+.fourthroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+.fifthroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+.sixthroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+.seventhroom{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #F8F6F3;
+    padding: 20px;
+}
+
+
+@media(max-width:1024px){
+    .container{
+        height: auto;
+    }
+    .firstroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .secondroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .thirdroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .fourthroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .fifthroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .sixthroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .seventhroom{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .image img{
+        width: 300px;
+        height: auto;
+    }
+    .image{
+        display: flex;
+        align-items: center;
+    }
+    .title h1{
+        font-size: 20px;
+    }
+
+}

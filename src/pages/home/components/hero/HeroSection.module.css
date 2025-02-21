@@ -46,3 +46,28 @@
 .textt{
     display: flex;
 }
+
+
+@media(max-width:688px){
+    .textt h1{
+        width: 500px;
+    }
+}
+@media(max-width:505px){
+    .textt h1{
+        width: 350px;
+        font-size: 50px;
+    }
+}
+@media(max-width:360px){
+    .textt h1{
+        width: 300px;
+        font-size: 45px;
+    }
+}
+@media(max-width:330px){
+    .textt h1{
+        width: 250px;
+        font-size: 35px;
+    }
+}

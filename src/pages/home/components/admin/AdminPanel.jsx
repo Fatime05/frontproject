@@ -1,12 +1,14 @@
-import React from 'react'
-import Layout from '../../../../components/layout/Layout'
+import React from "react";
+
+
 
 const AdminPanel = () => {
   return (
-    <div>
-      <Layout/>
-    </div>
-  )
-}
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Admin panelinə xoş gəldiniz.</p>
+      </div>
+  );
+};
 
-export default AdminPanel
+export default AdminPanel;

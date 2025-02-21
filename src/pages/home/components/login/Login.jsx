@@ -1,10 +1,12 @@
-import styles from './Login.module.css'
-import { useState } from "react";
+import styles from './Login.module.css';
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { AuthContext } from '../../../../context/AuthContext';
+ // AuthContext import edilir
 
 const Login = () => {
+  const { login } = useContext(AuthContext); // Contextdən login funksiyasını alırıq
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -15,34 +17,17 @@ const Login = () => {
     setError(null);
 
     try {
-      const res = await axios.post("http://localhost:6066/api/auth/login", {
-        username: email,  // Backend username istifadə etdiyi üçün email-i göndəririk
+      const res = await axios.post("http://localhost:6068/api/auth/login", {
+        username: email, 
         password
       }, { withCredentials: true });
 
-      // Serverdən gələn məlumatı konsola yazırıq
-      console.log("Server response:", res.data);  // Tam cavabı yaz
+      const userData = res.data;
+      login(userData); // Context vasitəsilə istifadəçini yadda saxlayırıq
 
-      // Serverdən gələn user məlumatını birbaşa res.data istifadə edirik
-      const userData = res.data;   // res.data birbaşa istifadə olunur
-
-      // localStorage-ın mövcudluğunu yoxlayırıq
-      if (typeof(Storage) !== "undefined") {
-        // localStorage mövcuddursa, məlumatı saxlayırıq
-        if (userData) {
-          console.log("User data to store:", userData);
-          localStorage.setItem("user", JSON.stringify(userData));
-        } else {
-          console.log("No user data found!");
-        }
-      } else {
-        console.log("localStorage is not supported or is disabled in this environment");
-      }
-
-      console.log(res.data);
-      navigate("/dashboard"); // Daxil olduqdan sonra yönləndiririk
+      navigate("/"); // Ana səhifəyə yönləndiririk
     } catch (err) {
-      setError(err.response?.data?.message || err.message || "Something went wrong!");
+      setError(err.response?.data?.message || "Something went wrong!");
     }
   };
 

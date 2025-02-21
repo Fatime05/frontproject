@@ -7,12 +7,22 @@ import style from "./FeaturedHotel.module.css";
 
 const FeaturedHotels = () => {
   const [hotels, setHotels] = useState([]);
+  const [loading, setLoading] = useState(true);  // ✅ Loading state
+  const [error, setError] = useState(null);  
 
   useEffect(() => {
     axios
-      .get("http://localhost:6066/api/hotels?featured=true")
-      .then((response) => setHotels(response.data))
-      .catch((error) => console.error("Error fetching hotels:", error));
+      .get("http://localhost:6068/api/hotels?featured=true")
+      .then((response) => {  // ✅ Burada response obyektini alırıq
+        console.log("API Response:", response.data); // 🛠 Konsolda API cavabını göstərir
+        setHotels(response.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching hotels:", err);
+        setError("Hotels could not be loaded. Please try again.");
+        setLoading(false);
+      });
   }, []);
 
   const settings = {

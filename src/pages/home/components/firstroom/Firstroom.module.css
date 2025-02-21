@@ -1,0 +1,209 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 20px;
+  flex-wrap: wrap;  /* Allow content to wrap on smaller screens */
+}
+
+.context {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;  /* Make context take up full width */
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;  /* Ensure the bottom section takes full width */
+}
+
+.bottom h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.facili {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #131e2a;
+  margin-top: 40px;
+  letter-spacing: 2px;
+}
+
+.fac h1 {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+}
+
+/* Image styling */
+.imgDiv img {
+  width: 100%; /* Make images responsive */
+  height: auto;
+  max-width: 170px; /* Limit maximum width */
+  margin-bottom: 10px;
+}
+
+.icon img {
+  width: 100%;
+  max-width: 600px; /* Make icon image responsive */
+}
+
+hr {
+  width: 100%;
+  max-width: 1200px; /* Ensure hr scales properly */
+}
+
+.roomdescription p {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.roomdescription p::before {
+  content: "•";
+  font-size: 20px;
+  margin-right: 10px;
+  color: #000;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.room-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description h1 {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+}
+
+.roomdescription p {
+  font-family: Karla, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #666666;
+}
+
+.service h1 {
+  color: black;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.beds h1 {
+  color: #666666;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.beds {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet (max-width 1024px) */
+@media (max-width: 1024px) {
+  .bottom h1 {
+      font-size: 30px;  /* Adjust heading size */
+  }
+
+  .imgDiv img {
+      width: 50%;  /* Make images smaller for tablets */
+  }
+
+  .icon img {
+      width: 100%;  /* Make the icon image fit */
+      max-width: 500px;
+  }
+
+  .roomdescription p {
+      font-size: 14px;  /* Adjust text size */
+  }
+
+  .facili,
+  .fac h1,
+  .beds h1 {
+      font-size: 14px;  /* Reduce font size for smaller screens */
+  }
+
+  hr {
+      max-width: 100%;
+  }
+}
+
+/* Mobile (max-width 768px) */
+@media (max-width: 768px) {
+  .container {
+      padding: 0 10px;  /* Reduce padding for mobile */
+  }
+
+  .bottom h1 {
+      font-size: 20px;  /* Adjust heading size */
+  }
+
+  .imgDiv img {
+      width: 100%;  /* Make images fill the screen */
+  }
+
+  .roomdescription p {
+      font-size: 12px;  /* Smaller text size for mobile */
+  }
+
+  .facili,
+  .fac h1,
+  .beds h1 {
+      font-size: 12px;  /* Reduce font size for very small screens */
+  }
+
+  .icon img {
+      width: 100%;
+      max-width: 400px;  /* Adjust icon size */
+  }
+}
+
+/* Mobile (max-width 480px) */
+@media (max-width: 480px) {
+  .bottom h1 {
+      font-size: 20px;  /* Make heading smaller */
+  }
+
+  .imgDiv img {
+      width: 100%;  /* Full-width images */
+  }
+
+  .roomdescription p {
+      font-size: 12px;  /* Adjust text size for very small screens */
+  }
+
+  .facili,
+  .fac h1,
+  .beds h1 {
+      font-size: 12px;
+  }
+
+  .icon img {
+      width: 100%;  /* Make the icon image responsive */
+  }
+}

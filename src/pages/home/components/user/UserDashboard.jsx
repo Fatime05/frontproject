@@ -35,7 +35,7 @@ const UserDashboard = () => {
 
         // İstifadəçi məlumatı varsa, serverdən alırıq
         const res = await axios.get(
-          `http://localhost:6066/api/users/${user._id}`,
+          `http://localhost:6068/api/users/${user._id}`,
           { withCredentials: true }
         );
 

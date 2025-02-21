@@ -1,0 +1,10 @@
+.admincontainer {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .admincontent {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  

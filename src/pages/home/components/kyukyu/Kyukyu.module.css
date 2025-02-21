@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+}
+.context{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.title h1{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+
+
+
+
+.imgDiv img{
+    width:900px;
+}

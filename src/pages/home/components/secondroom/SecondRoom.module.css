@@ -1,0 +1,105 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.context{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 20px;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+}
+.bottom h1{
+text-align: center;
+font-size: 60px;
+font-weight: 400;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+.facili{
+font-family: "Playfair Display", serif;
+font-weight: 400;
+font-size: 12px;
+color: #131e2a;
+margin-top: 40px;
+letter-spacing: 2px;
+}
+.fac h1{
+font-family: Karla, sans-serif;
+font-weight: 700;
+font-size: 16px;
+color: black;
+}
+/* .context h1{
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: black;
+  letter-spacing: 2px;
+} */
+
+.imgDiv img{
+  width: 170px;
+}
+.icon img{
+  width: 600px;
+}
+hr{
+  width: 1200px;
+}
+.roomdescription p {
+  text-align: left;              /* Mətni solda yerləşdirir */
+  font-size: 16px;               /* Mətn ölçüsünü təyin edir */
+  margin-bottom: 10px;           /* Hər bir bənd arasında məsafə */
+}
+
+.roomdescription p::before {
+  content: "•";                  /* Nöqtə işarəsi */
+  font-size: 20px;               /* Nöqtənin ölçüsü */
+  margin-right: 10px;            /* Nöqtə ilə mətn arasında məsafə */
+  color: #000;                   /* Nöqtənin rəngi */
+}
+.description{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.room-description{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.description h1{
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+}
+.roomdescription p{
+  font-family: Karla, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #666666;
+}
+
+.service h1{
+  color:black;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.beds h1{
+  color: #666666;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.beds{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

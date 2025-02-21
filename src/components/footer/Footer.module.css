@@ -145,3 +145,14 @@
 .buttom p{
     color:#E82574
 }
+
+
+@media(max-width:1024px){
+    .container{
+        height: auto;
+    }
+    .top{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}

@@ -4,15 +4,15 @@ import HeroSection from './components/hero/HeroSection'
 import BookingForm from './components/booking/BookingForm'
 import Footer from '../../components/footer/Footer'
 import FeaturedHotels from './components/featured/FeaturedHotel'
+import Holidays from './components/holidays/Holidays'
 
 const Home = () => {
   return (
     <div>
-        <Header/>
         <HeroSection/>
         <BookingForm/>
+        <Holidays/>
         <FeaturedHotels/>
-        <Footer/>
     </div>
   )
 }

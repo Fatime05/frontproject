@@ -1,0 +1,49 @@
+.roomform {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .roomform input,
+  .roomform textarea {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .roomform button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .roomstable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .roomstable th,
+  .roomstable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .roomstable th {
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  .roomstable button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  

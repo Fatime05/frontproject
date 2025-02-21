@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Router from './router/Router';
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext"; // ✅ AuthProvider əlavə edilir
+import AppRouter from "./router/Router"; // ✅ Yeni adı ilə import edilir
 
 function App() {
   return (
-   <Router/>
+    <AuthProvider> {/* ✅ AuthContext təmin edilir */}
+      <BrowserRouter> {/* ✅ BrowserRouter yalnız burada olmalıdır */}
+        <AppRouter /> {/* ✅ Dəyişdirilmiş Router komponenti */}
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
