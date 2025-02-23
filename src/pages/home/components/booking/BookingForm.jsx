@@ -15,7 +15,12 @@ const BookingForm = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Tarixlər və qonaq sayına əsasən otaqları backend-dən alırıq
+
+
+  console.log("Component re-rendered, availableRooms:", availableRooms);
+
+
+
   useEffect(() => {
     if (checkInDate && checkOutDate && guestCount) {
       setLoading(true);
@@ -26,9 +31,19 @@ const BookingForm = () => {
             checkOutDate: checkOutDate.toISOString(),
             guestCount,
           });
-          setAvailableRooms(response.data.availableRooms);
+          console.log("Response from backend:", response.data);
+          console.log("Available rooms from backend:", response.data.availableRooms);
+          if (response.data.availableRooms.length > 0) {
+            setAvailableRooms(response.data.availableRooms);
+            console.log("Updated availableRooms:", availableRooms);
+            console.log("Number of available rooms:", availableRooms.length);
+
+          } else {
+            alert("No rooms available for the selected dates.");
+          }
         } catch (error) {
           console.error('Error fetching rooms', error);
+          alert("An error occurred while fetching available rooms.");
         } finally {
           setLoading(false);
         }
@@ -37,8 +52,16 @@ const BookingForm = () => {
     }
   }, [checkInDate, checkOutDate, guestCount]);
 
-  // Otaq rezervasiya edilərkən istifadəçini yönləndirmək
+
+  useEffect(() => {
+    console.log("Updated availableRooms after setting state:", availableRooms);
+  }, [availableRooms]);
+  
+ 
   const handleBooking = (roomId) => {
+  
+    setAvailableRooms((prevRooms) => prevRooms.filter(room => room._id !== roomId));
+    
     navigate(`/room/${roomId}`, { state: { checkInDate, checkOutDate, guestCount } });
   };
 
@@ -49,6 +72,9 @@ const BookingForm = () => {
       alert("Please select check-in, check-out dates, and guest count.");
       return;
     }
+    navigate("/availablerooms", {
+      state: { checkInDate, checkOutDate, guestCount }
+    });
 
     const bookingDetails = {
       checkInDate: checkInDate.toISOString(),
@@ -59,7 +85,7 @@ const BookingForm = () => {
     try {
       const response = await axios.post('http://localhost:6068/api/search', bookingDetails);
       if (response.data.availableRooms.length > 0) {
-        navigate('/available-rooms', { state: bookingDetails }); // Burada `state` düzgün göndərilir
+        setAvailableRooms(response.data.availableRooms); 
       } else {
         alert("No available rooms for the selected dates.");
       }
@@ -72,7 +98,7 @@ const BookingForm = () => {
   return (
     <section className={style.bookingform}>
       <div className={style.formDiv}>
-        <form onSubmit={handleSubmit}> {/* Form submitini istifadə edirik */}
+        <form onSubmit={handleSubmit}> 
           <div className={style.formm}>
             <div className={style.form}>
               <div className={style.iconDiv}>
@@ -127,7 +153,7 @@ const BookingForm = () => {
               </div>
             </div>
 
-            <button type="submit">CHECK OUT</button> {/* Formu göndərmək */}
+            <button type="submit">CHECK OUT</button>
           </div>
         </form>
 

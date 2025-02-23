@@ -4,20 +4,20 @@
   align-items: center;
   margin-top: 40px;
   padding: 0 20px;
-  flex-wrap: wrap;  /* Allow content to wrap on smaller screens */
+  flex-wrap: wrap;  
 }
 
 .context {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;  /* Make context take up full width */
+  width: 100%;  
 }
 
 .bottom {
   display: flex;
   flex-direction: column;
-  width: 100%;  /* Ensure the bottom section takes full width */
+  width: 100%;  
 }
 
 .bottom h1 {
@@ -45,22 +45,30 @@
   color: black;
 }
 
-/* Image styling */
+
+.imgDiv {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
 .imgDiv img {
-  width: 100%; /* Make images responsive */
+  width: 100%;
+  max-width: 250px;
   height: auto;
-  max-width: 170px; /* Limit maximum width */
-  margin-bottom: 10px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .icon img {
   width: 100%;
-  max-width: 600px; /* Make icon image responsive */
+  max-width: 600px; 
 }
 
 hr {
   width: 100%;
-  max-width: 1200px; /* Ensure hr scales properly */
+  max-width: 1200px; 
 }
 
 .roomdescription p {
@@ -121,31 +129,30 @@ hr {
   gap: 10px;
 }
 
-/* Media Queries for Responsiveness */
 
-/* Tablet (max-width 1024px) */
+
 @media (max-width: 1024px) {
   .bottom h1 {
-      font-size: 30px;  /* Adjust heading size */
+      font-size: 30px; 
   }
 
   .imgDiv img {
-      width: 50%;  /* Make images smaller for tablets */
+      width: 50%;  
   }
 
   .icon img {
-      width: 100%;  /* Make the icon image fit */
+      width: 100%; 
       max-width: 500px;
   }
 
   .roomdescription p {
-      font-size: 14px;  /* Adjust text size */
+      font-size: 14px;  
   }
 
   .facili,
   .fac h1,
   .beds h1 {
-      font-size: 14px;  /* Reduce font size for smaller screens */
+      font-size: 14px;  
   }
 
   hr {
@@ -153,48 +160,48 @@ hr {
   }
 }
 
-/* Mobile (max-width 768px) */
+
 @media (max-width: 768px) {
   .container {
-      padding: 0 10px;  /* Reduce padding for mobile */
+      padding: 0 10px; 
   }
 
   .bottom h1 {
-      font-size: 20px;  /* Adjust heading size */
+      font-size: 20px;  
   }
 
   .imgDiv img {
-      width: 100%;  /* Make images fill the screen */
+      width: 100%;
   }
 
   .roomdescription p {
-      font-size: 12px;  /* Smaller text size for mobile */
+      font-size: 12px;
   }
 
   .facili,
   .fac h1,
   .beds h1 {
-      font-size: 12px;  /* Reduce font size for very small screens */
+      font-size: 12px;  
   }
 
   .icon img {
       width: 100%;
-      max-width: 400px;  /* Adjust icon size */
+      max-width: 400px;  
   }
 }
 
-/* Mobile (max-width 480px) */
+
 @media (max-width: 480px) {
   .bottom h1 {
-      font-size: 20px;  /* Make heading smaller */
+      font-size: 20px; 
   }
 
   .imgDiv img {
-      width: 100%;  /* Full-width images */
+      width: 100%; 
   }
 
   .roomdescription p {
-      font-size: 12px;  /* Adjust text size for very small screens */
+      font-size: 12px;  
   }
 
   .facili,
@@ -204,6 +211,6 @@ hr {
   }
 
   .icon img {
-      width: 100%;  /* Make the icon image responsive */
+      width: 100%;  
   }
 }

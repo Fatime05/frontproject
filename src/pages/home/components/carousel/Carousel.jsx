@@ -15,50 +15,74 @@ const Carousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3, 
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    nextArrow: <SampleNextArrow />, // Oxları əlavə edirik
-    prevArrow: <SamplePrevArrow />, // Oxları əlavə edirik
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024, 
+        settings: {
+          slidesToShow: 2, 
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1, 
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, 
+        settings: {
+          slidesToShow: 1, 
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-   <div className={style.container}>
-     <div className={style.carouselContainer}>
-      <Slider {...settings}>
-        {images.map((img, index) => (
-          <div key={index} className={style.slide}>
-            <img src={img} alt={`Slide ${index + 1}`} className={style.image} />
-          </div>
-        ))}
-      </Slider>
+    <div className={style.container}>
+      <div className={style.carouselContainer}>
+        <Slider {...settings}>
+          {images.map((img, index) => (
+            <div key={index} className={style.slide}>
+              <img src={img} alt={`Slide ${index + 1}`} className={style.image} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
-   </div>
   );
 };
 
+
 const SampleNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={`${className} ${style.nextArrow}`}
-        style={{ ...style }}
-        onClick={onClick}
-      />
-    );
-  };
-  
-  // Əvvəlki ox komponenti
-  const SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={`${className} ${style.prevArrow}`}
-        style={{ ...style }}
-        onClick={onClick}
-      />
-    );
-  };
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${style.nextArrow}`}
+      style={{ ...style }}
+      onClick={onClick}
+    />
+  );
+};
+
+
+const SamplePrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${style.prevArrow}`}
+      style={{ ...style }}
+      onClick={onClick}
+    />
+  );
+};
 
 export default Carousel;

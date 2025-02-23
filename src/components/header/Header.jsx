@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { FaUserCircle } from "react-icons/fa"; // İstifadəçi iconu
-import { FiMenu } from "react-icons/fi"; // Mobil menyu iconu
+import { FaUserCircle } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi"; 
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import style from "./Header.module.css";
@@ -10,7 +10,7 @@ import style from "./Header.module.css";
 const Header = ({ isHomePage }) => {
   const navigate = useNavigate();
   const { user, logout } = useContext(AuthContext);
-  const [isOpen, setIsOpen] = useState(false); // Drawer üçün state
+  const [isOpen, setIsOpen] = useState(false); 
 
   const toggleDrawer = () => setIsOpen((prev) => !prev);
 
@@ -22,7 +22,7 @@ const Header = ({ isHomePage }) => {
       <div className={`${style.context} ${contextt}`}>
         <div className={style.logo}>
           <Link to="/home">
-            <h1>Kera</h1>
+            <img src="https://rayalparkhotel.netlify.app/assets/logo.png" alt="" />
           </Link>
         </div>
 
@@ -39,7 +39,7 @@ const Header = ({ isHomePage }) => {
               <li><Link to="/rooms" onClick={toggleDrawer}>Accommodation</Link></li>
               <li><Link to="/restaurants" onClick={toggleDrawer}>Restaurants</Link></li>
               <li><Link to="/admin" onClick={toggleDrawer}>Admin Panel</Link></li>
-              <li><Link to="#" onClick={toggleDrawer}>Contact</Link></li>
+              <li><Link to="/spa" onClick={toggleDrawer}>Spa</Link></li>
             </ul>
           </div>
         </Drawer>
@@ -49,8 +49,8 @@ const Header = ({ isHomePage }) => {
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/rooms">Accommodation</Link></li>
             <li><Link to="/restaurants">Restaurants</Link></li>
+            <li><Link to="/spa">Spa</Link></li>
             <li><Link to="/admin">Admin Panel</Link></li>
-            <li><Link to="#">Contact</Link></li>
           </ul>
         </div>
 
@@ -62,10 +62,10 @@ const Header = ({ isHomePage }) => {
               <button onClick={logout} className={style.logoutBtn}>Logout</button>
             </div>
           ) : (
-            <>
+            <div className={style.btn}>
               <button onClick={() => navigate("/login")} className={style.login}>Login</button>
               <button onClick={() => navigate("/signup")} className={style.register}>Register</button>
-            </>
+            </div>
           )}
         </div>
       </div>

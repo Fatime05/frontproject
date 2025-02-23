@@ -41,9 +41,8 @@ const Sevenroom = () => {
       <div className={style.description}>
         <h1>Room description:</h1>
         <div className={style.roomdescription}>
-          <p>Number: 73 m²</p>
-          <p>Terrace: 215 m²
-          </p>
+          <p> Number: 73 m²</p>
+          <p> Terrace: 215 m²</p>
           <p> Air conditioning system</p>
           <p> Non-smoking room</p>
         </div>
@@ -57,9 +56,9 @@ const Sevenroom = () => {
         <h1>Beds and accommodation:</h1>
         <div className={style.roomdescription}>
           <p> Maximum number of guests: 4</p>
-          <p> Bed type: 1 King</p>
+          <p> Bed type: 1 King or 2 Twin</p>
           <p> Cradles allowed:1</p>
-          <p> Extra bed allowed:2</p>
+          <p> Extra bed allowed:0</p>
         </div>
       </div>
 
@@ -85,15 +84,13 @@ const Sevenroom = () => {
       <div className={style.beds}>
         <h1>Furniture and furnishings:</h1>
         <div className={style.roomdescription}>
-          <p> 1 King size bed</p>
-          <p>Safe</p>
-          <p>Armchair</p>
-          <p>Work area</p>
-          <p>Iron and ironing board (upon request)</p>
-          <p>Electrical outlet</p>
-          <p>Mini fridge</p>
-          <p>Recreation area</p>
-          <p>Dining room</p>
+        <p> Beds size 1 King or 2 Twin</p>
+            <p>Safe</p>
+            <p>Armchair</p>
+            <p>Work area</p>
+            <p>Iron and ironing board (upon request)</p>
+            <p>Electrical outlet</p>
+            <p>Mini fridge</p>
         </div>
       </div>
 
@@ -127,3 +124,8 @@ const Sevenroom = () => {
 }
 
 export default Sevenroom
+
+
+
+
+

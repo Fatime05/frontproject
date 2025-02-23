@@ -1,6 +1,6 @@
 .bookingform {
   display: flex;
-  flex-direction: column;  /* Sütun şəklində düzülmə */
+  flex-direction: column;  
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -9,7 +9,7 @@
   height: auto;
   width: 100%;
   padding: 20px;
-  box-sizing: border-box; /* Padding daxilində qalacaq */
+  box-sizing: border-box; 
 }
 
 .formDiv {
@@ -21,7 +21,7 @@
 
 .formm {
   display: flex;
-  flex-direction: column; /* Vertikal sıralama */
+  flex-direction: column; 
   gap: 20px;
   width: 100%;
   max-width: 600px;

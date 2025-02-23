@@ -20,8 +20,8 @@ const Carouselsix = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    nextArrow: <SampleNextArrow />, // Oxları əlavə edirik
-    prevArrow: <SamplePrevArrow />, // Oxları əlavə edirik
+    nextArrow: <SampleNextArrow />, 
+    prevArrow: <SamplePrevArrow />, 
   };
 
   return (
@@ -50,7 +50,7 @@ const SampleNextArrow = (props) => {
     );
   };
   
-  // Əvvəlki ox komponenti
+
   const SamplePrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (

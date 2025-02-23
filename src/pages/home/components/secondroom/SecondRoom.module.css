@@ -1,105 +1,216 @@
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  padding: 0 20px;
+  flex-wrap: wrap;  
 }
-.context{
+
+.context {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: 20px;
+  width: 100%;  
 }
-.bottom{
+
+.bottom {
   display: flex;
   flex-direction: column;
+  width: 100%;  
 }
-.bottom h1{
-text-align: center;
-font-size: 60px;
-font-weight: 400;
-margin-top: 40px;
-margin-bottom: 40px;
+
+.bottom h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  line-height: 1.2;
 }
-.facili{
-font-family: "Playfair Display", serif;
-font-weight: 400;
-font-size: 12px;
-color: #131e2a;
-margin-top: 40px;
-letter-spacing: 2px;
-}
-.fac h1{
-font-family: Karla, sans-serif;
-font-weight: 700;
-font-size: 16px;
-color: black;
-}
-/* .context h1{
+
+.facili {
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  font-size: 25px;
-  color: black;
+  font-size: 12px;
+  color: #131e2a;
+  margin-top: 40px;
   letter-spacing: 2px;
-} */
-
-.imgDiv img{
-  width: 170px;
-}
-.icon img{
-  width: 600px;
-}
-hr{
-  width: 1200px;
-}
-.roomdescription p {
-  text-align: left;              /* Mətni solda yerləşdirir */
-  font-size: 16px;               /* Mətn ölçüsünü təyin edir */
-  margin-bottom: 10px;           /* Hər bir bənd arasında məsafə */
 }
 
-.roomdescription p::before {
-  content: "•";                  /* Nöqtə işarəsi */
-  font-size: 20px;               /* Nöqtənin ölçüsü */
-  margin-right: 10px;            /* Nöqtə ilə mətn arasında məsafə */
-  color: #000;                   /* Nöqtənin rəngi */
-}
-.description{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.room-description{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.description h1{
+.fac h1 {
   font-family: Karla, sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: black;
 }
-.roomdescription p{
+
+
+.imgDiv {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
+.imgDiv img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.icon img {
+  width: 100%;
+  max-width: 600px; 
+}
+
+hr {
+  width: 100%;
+  max-width: 1200px; 
+}
+
+.roomdescription p {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.roomdescription p::before {
+  content: "•";
+  font-size: 20px;
+  margin-right: 10px;
+  color: #000;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.room-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description h1 {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+}
+
+.roomdescription p {
   font-family: Karla, sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: #666666;
 }
 
-.service h1{
-  color:black;
+.service h1 {
+  color: black;
   letter-spacing: 1px;
   font-weight: 500;
 }
-.beds h1{
+
+.beds h1 {
   color: #666666;
   letter-spacing: 0.5px;
   font-weight: 700;
   font-size: 20px;
 }
-.beds{
+
+.beds {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .bottom h1 {
+      font-size: 30px; 
+  }
+
+  .imgDiv img {
+      width: 50%;  
+  }
+
+  .icon img {
+      width: 100%; 
+      max-width: 500px;
+  }
+
+  .roomdescription p {
+      font-size: 14px;  
+  }
+
+  .facili,
+  .fac h1,
+  .beds h1 {
+      font-size: 14px;  
+  }
+
+  hr {
+      max-width: 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+      padding: 0 10px; 
+  }
+
+  .bottom h1 {
+      font-size: 20px;  
+  }
+
+  .imgDiv img {
+      width: 100%;
+  }
+
+  .roomdescription p {
+      font-size: 12px;
+  }
+
+  .facili,
+  .fac h1,
+  .beds h1 {
+      font-size: 12px;  
+  }
+
+  .icon img {
+      width: 100%;
+      max-width: 400px;  
+  }
+}
+
+
+@media (max-width: 480px) {
+  .bottom h1 {
+      font-size: 20px; 
+  }
+
+  .imgDiv img {
+      width: 100%; 
+  }
+
+  .roomdescription p {
+      font-size: 12px;  
+  }
+
+  .facili,
+  .fac h1,
+  .beds h1 {
+      font-size: 12px;
+  }
+
+  .icon img {
+      width: 100%;  
+  }
 }

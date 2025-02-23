@@ -12,7 +12,7 @@
     z-index: 1000;
 }
 
-/* Digər səhifələr üçün Header */
+
 .otherHeader {
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@
     background-color: #246B81;
 }
 
-/* Header-in daxili kontenti */
+
 .context {
     display: flex;
     justify-content: space-between;
@@ -30,12 +30,12 @@
     width: 80%;
 }
 
-/* Logo */
-.logo h1 {
-    color: white;
+
+.logo img {
+    width: 150px;
 }
 
-/* Navbar */
+
 .navbar ul {
     display: flex;
     list-style: none;
@@ -48,7 +48,7 @@
     color: white;
 }
 
-/* Login və Register düymələri */
+
 .logreg {
     display: flex;
     gap: 10px;
@@ -111,20 +111,50 @@
   .mobileMenu li {
     margin-bottom: 10px;
   }
-  
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px){
     .menuBtn {
       display: block;
       position: absolute;
       right: 20px;
       top: 20px;
     }
+    .navbar {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+  
   
     .navbar {
       display: none;
     }
   }
-  
+  @media screen and (max-width:503px){
+    .login,
+    .register {
+        width: 80px;
+        height: 29px;}
+.btn{
+  display: flex;
+  flex-direction: column;
+}
+.context{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+@media screen and (max-width:388px){
+  .context{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+  }
+  .btn{
+    margin-right: 50px;
+  }
+}
 
 
 

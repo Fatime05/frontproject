@@ -68,9 +68,7 @@
 
 
   @media(max-width:1024px){
-    .container{
-      margin-top: 400px;
-    }
+    
     .context{
       margin-top: 40px;
       display: flex;
@@ -88,7 +86,7 @@
     .image img{
       width: 400px;
       height: auto;
-      margin-top: 250px;
+      /* margin-top: 250px; */
     }
     .focus{
       width: 400px;
@@ -100,7 +98,7 @@
     .image img{
       width: 300px;
       height: auto;
-      margin-top: 250px;
+      
     }
     .focus{
       width: 300px;
@@ -113,7 +111,7 @@
     .image img{
       width: 250px;
       height: auto;
-      margin-top: 250px;
+      
     }
     .focus{
       width: 250px;

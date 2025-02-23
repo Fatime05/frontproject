@@ -1,49 +1,98 @@
 .roomform {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin-bottom: 20px;
-  }
-  
-  .roomform input,
-  .roomform textarea {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .roomform button {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.roomform input,
+.roomform textarea {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.roomform button {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.roomstable {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.roomstable th,
+.roomstable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.roomstable th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.roomstable button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
   .roomstable {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
+    overflow-x: auto;
   }
-  
-  .roomstable th,
-  .roomstable td {
+
+  .roomstable thead {
+    display: none;
+  }
+
+  .roomstable tr {
+    display: block;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
     padding: 10px;
+    border-radius: 5px;
+  }
+
+  .roomstable td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .roomstable td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
     text-align: left;
   }
-  
-  .roomstable th {
-    background-color: #2c3e50;
-    color: white;
+}
+
+@media (max-width: 480px) {
+  .roomform {
+    max-width: 100%;
   }
-  
-  .roomstable button {
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
+
+  .roomform button {
+    font-size: 14px;
   }
-  
+}

@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext"; // ✅ AuthProvider əlavə edilir
-import AppRouter from "./router/Router"; // ✅ Yeni adı ilə import edilir
+import { AuthProvider } from "./context/AuthContext"; 
+import AppRouter from "./router/Router"; 
 
 function App() {
   return (
-    <AuthProvider> {/* ✅ AuthContext təmin edilir */}
-      <BrowserRouter> {/* ✅ BrowserRouter yalnız burada olmalıdır */}
-        <AppRouter /> {/* ✅ Dəyişdirilmiş Router komponenti */}
+    <AuthProvider>
+      <BrowserRouter> 
+        <AppRouter /> 
       </BrowserRouter>
     </AuthProvider>
   );

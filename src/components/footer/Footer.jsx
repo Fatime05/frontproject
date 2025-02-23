@@ -6,7 +6,7 @@ const Footer = () => {
         <div className={style.context}>
             <div className={style.top}>
                 <div className={style.book}>
-                    <h1>XF Park</h1>
+                <img src="https://rayalparkhotel.netlify.app/assets/logo.png" alt="" />
                     <p>Discover a world of comfort, <br /> luxury, and adventure as you <br /> explore our curated selection of <br /> hotels, making every moment of <br /> your getaway truly extraordinary.</p>
                     <button>Book Now</button>
                 </div>

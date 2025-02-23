@@ -1,4 +1,4 @@
-/* Login səhifəsinin əsas konteyneri */
+
 .loginContainer {
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     background: linear-gradient(to right, #ff758c, #ff7eb3);
   }
   
-  /* Login qutusu */
+
   .loginBox {
     background: white;
     padding: 40px;
@@ -17,7 +17,7 @@
     width: 350px;
   }
   
-  /* Başlıq */
+
   .title {
     font-size: 24px;
     font-weight: bold;
@@ -25,13 +25,13 @@
     color: #333;
   }
   
-  /* Form sahəsi */
+
   .form {
     display: flex;
     flex-direction: column;
   }
   
-  /* Input sahələri */
+
   .input {
     width: 100%;
     padding: 10px;
@@ -41,7 +41,7 @@
     font-size: 16px;
   }
   
-  /* Checkbox */
+
   .rememberMe {
     display: flex;
     align-items: center;
@@ -50,7 +50,7 @@
     margin: 10px 0;
   }
   
-  /* Düymə */
+
   .button {
     background: linear-gradient(to right, #ff758c, #ff7eb3);
     color: white;
@@ -66,7 +66,7 @@
     background: linear-gradient(to right, #ff5e73, #ff66a3);
   }
   
-  /* Linklər */
+ 
   .links {
     display: flex;
     justify-content: space-between;

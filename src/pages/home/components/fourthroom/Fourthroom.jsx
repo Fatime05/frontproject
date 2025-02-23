@@ -1,13 +1,14 @@
 import React from 'react'
 import style from './Fourthroom.module.css'
 import Carouselt from '../../../../components/carouselt/Carouselt'
+
 const Fourthroom = () => {
   return (
     <div className={style.container}>
       <div className={style.context}>
         <div className={style.bottom}>
-          <h1 className={style.standard}>Family room with balcony</h1>
-          <Carouselt />
+          <h1 className={style.standard}>Superior room with balcony</h1>
+          <Carouselt/>
           <div className={style.imgDiv}>
             <img
               src="https://lankaransprings.az/photos/products/1646229282.LSWR-3.JPG"
@@ -39,10 +40,11 @@ const Fourthroom = () => {
         <div className={style.description}>
           <h1>Room description:</h1>
           <div className={style.roomdescription}>
-            <p> Number: 34 m²</p>
+            <p> Room: 24 m²</p>
             <p> Balcony: 8 m²</p>
             <p> Air conditioning system</p>
             <p> Non-smoking room</p>
+          
           </div>
         </div>
 
@@ -82,9 +84,12 @@ const Fourthroom = () => {
         <div className={style.beds}>
           <h1>Furniture and furnishings:</h1>
           <div className={style.roomdescription}>
-            <p> Beds size 1 King or 2 Twin</p>
+          <p> Beds size 1 King or 2 Twin</p>
             <p>Safe</p>
+            <p>Armchair</p>
+            <p>Work area</p>
             <p>Iron and ironing board (upon request)</p>
+            <p>Electrical outlet</p>
             <p>Mini fridge</p>
           </div>
         </div>
@@ -119,3 +124,8 @@ const Fourthroom = () => {
 }
 
 export default Fourthroom
+
+
+
+
+

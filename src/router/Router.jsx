@@ -27,6 +27,10 @@ import Menubow from "../pages/home/components/menubow/Menubow";
 import Menuvitamin from "../pages/home/components/menuvitamin/Menuvitamin";
 import Kyukyu from "../pages/home/components/kyukyu/Kyukyu";
 import Sumac from "../pages/home/components/sumac/Sumac";
+import Spa from "../pages/home/components/spa/Spa";
+import RoomDetails from "../components/roomDetails/RoomDetails";
+import Notfound from "../pages/home/components/notfound/Notfound";
+
 
 const AppRouter = () => {
   return (
@@ -38,7 +42,8 @@ const AppRouter = () => {
       <Route path="/contact" element={<Layout><Contact /></Layout>} />
       <Route path="/login" element={<Login />} /> 
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/available-rooms" element={<Layout><RoomsPage /></Layout>} />
+      <Route path="/availablerooms" element={<Layout><RoomsPage /></Layout>} />
+      <Route path="/room/:id" element={<RoomDetails />} />
       <Route path="/rooms" element={<Layout><Accommodation /></Layout>} />
       <Route path="/standard-nomer-s-balkonom" element={<Layout><Firstroom /></Layout>} />
       <Route path="/standard-nomer-c-terrasoy" element={<Layout><SecondRoom/></Layout>} />
@@ -58,6 +63,8 @@ const AppRouter = () => {
       <Route path="/menuvitamin" element={<Layout><Menuvitamin/></Layout>} />
       <Route path="/kyukyu" element={<Layout><Kyukyu/></Layout>} />
       <Route path="/sumac" element={<Layout><Sumac/></Layout>} />
+      <Route path="/spa" element={<Layout><Spa/></Layout>} />
+      <Route path='/*' element={<Notfound/>}/>
     </Routes>
   );
 };

@@ -1,13 +1,14 @@
 import React from 'react'
 import style from './SecondRoom.module.css'
 import Carouself from '../../../../components/carouself/Carouself'
+import Carousels from '../../../../components/carousels/Carousels'
 
 const SecondRoom = () => {
   return (
     <div className={style.container}>
       <div className={style.context}>
         <div className={style.bottom}>
-          <h1>Standard room with Terrace</h1>
+          <h1 className={style.standard}>Standard room with Terrace</h1>
           <Carouself />
           <div className={style.imgDiv}>
             <img
@@ -26,7 +27,7 @@ const SecondRoom = () => {
           </div>
         </div>
 
-        <h1 className={style.facili}>Facilities</h1>
+        <div className={style.facili}><h1 >Facilities</h1></div>
         <hr />
         <div>
           <div className={style.icon}>
@@ -49,7 +50,7 @@ const SecondRoom = () => {
           </div>
         </div>
 
-        <div className={style.service}>
+        <div className={style.fac}>
         <h1>Facilities and Services</h1>
         </div>
 
@@ -67,7 +68,7 @@ const SecondRoom = () => {
         <div className={style.beds}>
           <h1>View from the room:</h1>
           <div className={style.roomdescription}>
-            <p>View of the garden</p>
+            <p> View of the garden</p>
           </div>
         </div>
 
@@ -125,3 +126,11 @@ const SecondRoom = () => {
 }
 
 export default SecondRoom
+
+
+
+
+
+
+
+

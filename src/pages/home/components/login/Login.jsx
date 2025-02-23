@@ -3,10 +3,10 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from '../../../../context/AuthContext';
- // AuthContext import edilir
+
 
 const Login = () => {
-  const { login } = useContext(AuthContext); // Contextdən login funksiyasını alırıq
+  const { login } = useContext(AuthContext); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -23,9 +23,9 @@ const Login = () => {
       }, { withCredentials: true });
 
       const userData = res.data;
-      login(userData); // Context vasitəsilə istifadəçini yadda saxlayırıq
+      login(userData); 
 
-      navigate("/"); // Ana səhifəyə yönləndiririk
+      navigate("/"); 
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
     }

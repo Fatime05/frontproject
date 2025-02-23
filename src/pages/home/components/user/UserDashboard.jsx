@@ -4,8 +4,8 @@ import axios from "axios";
 import style from './UserDashboard.module.css'
 
 const UserDashboard = () => {
-  const [user, setUser] = useState(null);  // İstifadəçi məlumatları
-  const [loading, setLoading] = useState(true); // Yükləmə vəziyyəti
+  const [user, setUser] = useState(null);  
+  const [loading, setLoading] = useState(true); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const UserDashboard = () => {
       try {
         const storedUser = localStorage.getItem("user");
 
-        // localStorage-də məlumat yoxdursa, login səhifəsinə yönləndiririk
+       
         if (!storedUser) {
           navigate("/login");
           return;
@@ -21,7 +21,7 @@ const UserDashboard = () => {
 
         let user = null;
         try {
-          // localStorage-dan alınan məlumatı JSON formatına çeviririk
+          
           user = JSON.parse(storedUser);
           if (!user || !user._id) {
             navigate("/login");
@@ -33,13 +33,13 @@ const UserDashboard = () => {
           return;
         }
 
-        // İstifadəçi məlumatı varsa, serverdən alırıq
+        
         const res = await axios.get(
           `http://localhost:6068/api/users/${user._id}`,
           { withCredentials: true }
         );
 
-        setUser(res.data); // Məlumatı state-də saxlayırıq
+        setUser(res.data); 
         setLoading(false);
       } catch (error) {
         console.log("Error fetching user data:", error);
@@ -50,9 +50,9 @@ const UserDashboard = () => {
     fetchUser();
   }, [navigate]);
 
-  if (loading) return <p>Loading...</p>; // Loading yazısını göstəririk
+  if (loading) return <p>Loading...</p>; 
 
-  // Yalnız `user` mövcud olduqda məlumatları göstəririk
+
   if (!user) return <p>User data not found</p>;
 
   return (

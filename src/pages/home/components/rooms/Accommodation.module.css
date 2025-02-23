@@ -152,10 +152,48 @@
     }
     .image{
         display: flex;
+        justify-content: center;
         align-items: center;
     }
     .title h1{
         font-size: 20px;
     }
+}
 
+@media(max-width:346px){
+    .image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image img{
+        width: 250px;
+    }
+    .firstroom{
+        width: 300px;
+    }
+    .secondroom{
+        width: 300px;
+    }
+    .thirdroom{
+        width: 300px;
+    }
+    .fourthroom{
+        width: 300px;
+    }
+    .fifthroom{
+        width: 300px;
+    }
+    .sixthroom{
+        width: 300px;
+    }
+    .seventhroom{
+        width: 300px;
+    }
+    .text h1{
+        font-size: 20px;
+    }
+    .text p{
+        font-size: 12px;
+    }
 }

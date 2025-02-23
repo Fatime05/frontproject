@@ -34,14 +34,14 @@ export default function Signup() {
         password: formData.password,
       }, { withCredentials: true });
 
-      // Serverdən alınan istifadəçi məlumatlarını localStorage-a yazırıq
+      
       const userData = res.data.user;
       if (userData) {
         localStorage.setItem("user", JSON.stringify(userData));
       }
 
       alert("Registration successful! Please log in.");
-      navigate("/login"); // Qeydiyyat bitəndən sonra login səhifəsinə yönləndiririk
+      navigate("/login"); 
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
     }
